@@ -4,6 +4,8 @@ import App from "./App";
 import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
 import Home from "./routes/Home";
 import Details from "./routes/Details";
+import { Provider } from "react-redux";
+import store from "./store";
 
 const router = createBrowserRouter([
   {
@@ -17,4 +19,8 @@ const router = createBrowserRouter([
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<RouterProvider router={router} />);
+root.render(
+  <Provider store={store}>
+    <RouterProvider router={router} />
+  </Provider>
+);
