@@ -9,7 +9,7 @@ function Details({ toDos, onBtnClick }) {
   const navigate = useNavigate();
 
   const handleDel = () => {
-    onBtnClick(deatailsId);
+    onBtnClick(deatailsId); //이부분과 (31행)
     navigate("/");
   };
 
@@ -29,6 +29,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch, ownProps) {
   return {
     onBtnClick: (id) => {
+      //이 부분 주목
       console.log(id);
       dispatch(actionCreators.deleteTodo(id));
     },
